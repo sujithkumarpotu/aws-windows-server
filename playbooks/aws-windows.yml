@@ -1,0 +1,6 @@
+---
+- name: "Launch Windows AMI."
+  hosts: localhost
+
+  roles:
+  - aws-windows
