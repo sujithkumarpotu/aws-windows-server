@@ -43,6 +43,10 @@
       cidr_ip: 0.0.0.0/0
   register: security_group
 
+- name: gather ec2 facts
+  ec2_instance_facts:
+    region: "{{ aws_region }}" 
+
 - name: "Start Windows instances."
   ec2:
     aws_access_key: "{{ aws_access_key_id }}"

@@ -1,0 +1,5 @@
+---
+- hosts: localhost
+  tasks:
+    - name: Gather EC2 facts
+      local_action: ec2_facts
