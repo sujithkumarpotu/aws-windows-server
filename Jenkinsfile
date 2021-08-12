@@ -21,9 +21,9 @@ stages {
      stage ("Preparing Python virtual environment") {
           steps {
             sh '''
-              sudo -S apt-get -y install python-pip jq curl bsdmainutils
-              sudo -S pip3 install -r requirements.txt
-              sudo -S pip3 install wheel jinja2 jinja2-cli "python-dotenv[cli]"
+              apt-get -y install python-pip jq curl bsdmainutils
+              pip3 install -r requirements.txt
+              pip3 install wheel jinja2 jinja2-cli "python-dotenv[cli]"
 	      '''
           }
         }
