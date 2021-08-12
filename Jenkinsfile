@@ -13,15 +13,24 @@ stages {
         script {
 	    env.WINDOWS_VM_IP = params.WINDOWS_VM_IP
             env.WINDOWS_VM_USER = params.WINDOWS_VM_USER
-	    env.WINDOWS_VM_PASSWD = params.AWS_REGION
+	    env.WINDOWS_VM_PASSWD = params.WINDOWS_VM_PASSWD
         }
       }
     }
 
     stage ('Run PLaybook') {
         steps {
-	    sh ('')
+	    sh ('ansible-playbook -i WINDOWS_VM_IP, ./playbooks/connect-windows-server.yml -e ansible-user=WINDOWS_VM_USER -e ansible-password=WINDOWS_VM_PASSWD -vvv')
         }
+    }
+  }
+ 
+  post {
+    success {
+      echo "success"
+    }
+    failure {
+      echo "failure"
     }
   }
 }
