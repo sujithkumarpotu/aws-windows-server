@@ -1,0 +1,7 @@
+---
+# Print hello world on stdout
+- name: hello world console
+  hosts: all
+  tasks:
+      - name: Execute script on remote_machine
+        shell: echo "I am creating a new file" > /tmp/new_file.txt
