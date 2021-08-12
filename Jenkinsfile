@@ -21,8 +21,8 @@ stages {
      stage ("Preparing Python virtual environment") {
           steps {
             sh '''
-              pip3 install -r requirements.txt
-              pip3 install wheel jinja2 jinja2-cli "python-dotenv[cli]"
+              pip install -r requirements.txt
+              pip install wheel jinja2 jinja2-cli "python-dotenv[cli]"
 	      '''
           }
         }
